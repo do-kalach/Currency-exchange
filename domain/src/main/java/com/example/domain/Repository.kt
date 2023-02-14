@@ -9,4 +9,6 @@ interface Repository {
 
     suspend fun getCurrencyData(base: String): Flow<Currency>
 
+    suspend fun saveFavourite(currency: Currency)
+
 }

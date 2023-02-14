@@ -6,7 +6,7 @@ import com.example.domain.model.Currency
 import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
 
-class RepositoryImpl(private val api: Api) :
+class RepositoryImpl(private val api: Api, private val database: MyDatabase) :
     Repository {
 
     override suspend fun getAllCurrencies(): ResultOf {
@@ -31,6 +31,10 @@ class RepositoryImpl(private val api: Api) :
 
     override suspend fun getCurrencyData(base: String): Flow<Currency> {
         TODO("Not yet implemented")
+    }
+
+    override suspend fun saveFavourite(currency: Currency) {
+
     }
 
 }
